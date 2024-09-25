@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TasksService } from '../../services/tasks.service';
 import { AppComponent } from '../../../../app.component';
+import { HomeLayoutComponent } from '../../../layout/components/home-layout/home-layout.component';
 
 @Component({
   selector: 'app-task-form',
@@ -20,7 +21,7 @@ export class TaskFormComponent {
 
   constructor(
     private tasksService: TasksService,
-    @Inject(AppComponent) private appComponent: AppComponent
+    @Inject(HomeLayoutComponent) private homeComponent: HomeLayoutComponent
   ) {}
 
   createTask = () => {
@@ -32,6 +33,6 @@ export class TaskFormComponent {
       title: this.title.value!,
       dates: { startDate: this.startDate.value!, endDate: this.endDate.value! },
     });
-    this.appComponent.onCloseTaskForm();
+    this.homeComponent.onCloseTaskForm();
   };
 }

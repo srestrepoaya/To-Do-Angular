@@ -11,8 +11,8 @@ import * as environments from './modules/environments/environments.json';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
+    provideZoneChangeDetection({ eventCoalescing: true }),
     provideClientHydration(),
     provideFirebaseApp(() =>
       initializeApp({
