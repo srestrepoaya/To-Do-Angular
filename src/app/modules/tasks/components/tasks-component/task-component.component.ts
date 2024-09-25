@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './task-component.component.css',
 })
 export class TaskComponent {
-  @Input() bgColor: string = '';
+  @Input() color: string = '';
   @Input() startTime: string = '';
   @Input() endTime: string = '';
   @Input() taskTitle: string = '';
